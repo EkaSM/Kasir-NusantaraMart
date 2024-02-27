@@ -1,10 +1,6 @@
 <h1># Kasir-NusantaraMart</h1>
 
-Nama = Eka Satria Mandala
-
-Nomer = 34
-
-Kelas = 12 RPL A
+<h2>Nama = Eka Satria Mandala <br>Nomer = 34Kelas = 12 RPL A</h2>
 
 Aplikasi Kasir NusantaraMart adalah aplikasi kasir berbasis website.
 
