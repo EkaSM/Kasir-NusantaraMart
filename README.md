@@ -24,29 +24,29 @@ Aplikasi Kasir NusantaraMart memiliki fitur yang memudahkan pemilik bisnis dalam
 
 Login Admin
 
-username = eka
+username1 = eka
 
-password = eka
+password1 = eka
 
 
 
-username = age
+username2 = age
 
-password = age
+password2 = age
 
 ==================
 
 Login Admin
 
-username = eko
+username1 = eko
 
-password = eko
+password1 = eko
 
 
 
-username = oke
+username2 = oke
 
-password = oke
+password2 = oke
 
 
 
