@@ -130,7 +130,7 @@ $nojual = generateNo();
                                 <div class="col-sm-10 input-group">
                                     <input type="text" name="barcode" 
                                     id="barcode" value="<?= @$_GET['barcode'] ? 
-                                    $_GET['barcode'] : '' ?>" class="form-control"
+                                    '' : '' ?>" class="form-control"
                                     placeholder="Masukkan barcode barang">
                                     <div class="input-group-append">
                                         <span class="input-group-text" 
@@ -339,23 +339,46 @@ $nojual = generateNo();
             kembalian.value = bayar.value - total.value;
         })
 
-        // Menangkap event saat tombol Enter ditekan pada input barcode
-        document.getElementById('barcode').addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
-            event.preventDefault(); // Mencegah perilaku default tombol Enter (submit form)
-            // Panggil fungsi untuk mengarahkan ke URL dengan parameter barcode dan tanggal
-            window.location.href = `?barcode=${this.value}&tgl=${tgl.value}`;
-        }
-    });
+//    // Menangkap event saat tombol Enter ditekan pada input barcode
+// document.getElementById('barcode').addEventListener('keydown', function(event) {
+//     if (event.key === 'Enter') {
+//         event.preventDefault(); // Mencegah perilaku default tombol Enter (submit form)
+//         // Panggil fungsi untuk mengarahkan ke URL dengan parameter barcode dan tanggal
+//         window.location.href = `?barcode=${this.value}&tgl=${tgl.value}`;
+//         this.value = ''; // Mengosongkan nilai input setelah pemindaian barcode
+//     }
+// });
 
-    // Menangkap event saat tombol Enter ditekan pada tombol "Tambah Barang"
-    document.querySelector('button[name="addbrg"]').addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
-            event.preventDefault(); // Mencegah perilaku default tombol Enter (submit form)
-            // Fokus ke input berikutnya (dalam hal ini, field untuk jumlah barang atau qty)
-            document.getElementById('qty').focus();
-        }
-    });
+   // Menangkap event saat tombol Enter ditekan pada input barcode
+document.getElementById('barcode').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Mencegah perilaku default tombol Enter (submit form)
+        // Panggil fungsi untuk mengarahkan ke URL dengan parameter barcode dan tanggal
+        window.location.href = `?barcode=${this.value}&tgl=${tgl.value}`;
+        this.value = ''; // Mengosongkan nilai input barcode setelah pemindaian
+    }
+});
+
+// Setiap kali data barang berhasil ditampilkan
+// Mengosongkan nilai input barcode dan mengarahkan fokus kembali ke input barcode
+document.getElementById('noNota').addEventListener('change', function() {
+    document.getElementById('barcode').value = ''; // Mengosongkan nilai input barcode
+    document.getElementById('barcode').focus(); // Mengarahkan fokus kembali ke input barcode
+});
+
+// Menangkap event saat tombol Enter ditekan pada tombol "Tambah Barang"
+document.querySelector('button[name="addbrg"]').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Mencegah perilaku default tombol Enter (submit form)
+        // Fokus ke input berikutnya (dalam hal ini, field untuk jumlah barang atau qty)
+        document.getElementById('qty').focus();
+    }
+});
+
+// Set fokus ke input barcode setelah halaman dimuat dan data produk berhasil ditampilkan
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('barcode').focus();
+});
 
 
     </script>

@@ -74,6 +74,37 @@ function insert($data){
     mysqli_affected_rows($koneksi);
 }
 
+// function insert($data){
+//     global $koneksi;
+
+//     $no = mysqli_real_escape_string($koneksi, $data['nojual']);
+//     $tgl = mysqli_real_escape_string($koneksi, $data['tglNota']);
+//     $kode = mysqli_real_escape_string($koneksi, $data['barcode']);
+//     $nama = mysqli_real_escape_string($koneksi, $data['namaBrg']);
+//     $qty = 1; // Set qty awal ke 1
+//     $harga = mysqli_real_escape_string($koneksi, $data['harga']);
+//     $jmlharga = mysqli_real_escape_string($koneksi, $data['jmlHarga']);
+//     $stok = mysqli_real_escape_string($koneksi, $data['stok']);
+
+//     // Cek barang apakah sudah diinput
+//     $cekbrg = mysqli_query($koneksi, "SELECT * FROM tbl_jual_detail WHERE no_jual = '$no' AND barcode = '$kode'");
+//     if (mysqli_num_rows($cekbrg)) {
+//         // Jika barang sudah ada, tambahkan 1 ke kuantitasnya
+//         $sqlUpdateQty = "UPDATE tbl_jual_detail SET qty = qty + 1 WHERE no_jual = '$no' AND barcode = '$kode'";
+//         mysqli_query($koneksi, $sqlUpdateQty);
+//     } else {
+//         // Jika barang belum ada, tambahkan barang baru dengan qty 1
+//         $sqlJual = "INSERT INTO tbl_jual_detail VALUES (null, '$no', '$tgl', '$kode', '$nama', $qty, $harga, $jmlharga)";
+//         mysqli_query($koneksi, $sqlJual);
+//     }
+
+//     // Kurangi stok barang dari database
+//     mysqli_query($koneksi, "UPDATE tbl_barang SET stock = stock - $qty WHERE barcode = '$kode'");
+
+//     return mysqli_affected_rows($koneksi);
+// }
+
+
 function delete($barcode, $idjual, $qty){
     global $koneksi;
 
