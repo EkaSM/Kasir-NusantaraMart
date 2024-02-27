@@ -20,14 +20,18 @@ Aplikasi Kasir NusantaraMart memiliki fitur yang memudahkan pemilik bisnis dalam
 
 5.Laporan Informasi Stok
 
-=======================================================================================================================================================
+================================================================================================
 
 Login Admin
 
 username = eka
+
 password = eka
 
+
+
 username = age
+
 password = age
 
 ==================
@@ -35,9 +39,13 @@ password = age
 Login Admin
 
 username = eko
+
 password = eko
 
+
+
 username = oke
+
 password = oke
 
 
