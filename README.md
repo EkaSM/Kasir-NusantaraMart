@@ -5,6 +5,7 @@ Nama = Eka Satria Mandala
 Nomer = 34
 
 Kelas = 12 RPL A
+<br>
 
 Aplikasi Kasir NusantaraMart adalah aplikasi kasir berbasis website.
 
